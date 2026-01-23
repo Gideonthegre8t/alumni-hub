@@ -5,6 +5,7 @@ import { uploadGalleryImage } from "./action";
 import { Button } from "@/components/ui/button";
 import { Loader2, ImagePlus } from "lucide-react";
 import { useFormStatus } from "react-dom";
+import { useRouter } from "next/navigation";
 
 function SubmitButton({ disabled }: { disabled: boolean }) {
   const { pending } = useFormStatus();
@@ -16,19 +17,32 @@ function SubmitButton({ disabled }: { disabled: boolean }) {
   );
 }
 
-export function GalleryUpload() {
+interface GalleryUploadProps {
+  onUploadComplete?: () => void;
+}
+
+export function GalleryUpload({ onUploadComplete }: GalleryUploadProps) {
   const [fileName, setFileName] = useState("");
   const [caption, setCaption] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
 
   return (
     <div className="flex items-center justify-center">
       <form
         action={async (formData) => {
           await uploadGalleryImage(formData);
+
+          // Clear input fields
           setFileName("");
           setCaption("");
           if (fileRef.current) fileRef.current.value = "";
+
+          // Refresh the page / gallery section
+          router.refresh();
+          
+          // Force gallery refresh (calls parent's refetch)
+          onUploadComplete?.();
         }}
         className="flex flex-col gap-3 w-full md:w-96"
       >

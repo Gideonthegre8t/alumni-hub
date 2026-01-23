@@ -8,62 +8,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET!,
 });
 
-export async function DELETE(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
-  const supabase = await createClient();
-  const id = params?.id;
-
-  if (!id) {
-    return NextResponse.json({ error: "Missing ID" }, { status: 400 });
-  }
-
-  // get logged in user
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  // get image row
-  const { data: image, error: fetchError } = await supabase
-    .from("gallery")
-    .select("public_id")
-    .eq("id", id)
-    .eq("user_id", user.id)
-    .single();
-
-  if (fetchError || !image) {
-    return NextResponse.json(
-      { error: "Image not found" },
-      { status: 404 }
-    );
-  }
-
-  // delete from cloudinary
-  if (image.public_id) {
-    await cloudinary.uploader.destroy(image.public_id);
-  }
-
-  // delete from database
-  const { error: deleteError } = await supabase
-    .from("gallery")
-    .delete()
-    .eq("id", id)
-    .eq("user_id", user.id);
-
-  if (deleteError) {
-    return NextResponse.json(
-      { error: deleteError.message },
-      { status: 400 }
-    );
-  }
-
-  return NextResponse.json({ success: true });
-}
 
 export async function GET() {
   const supabase = await createClient();
