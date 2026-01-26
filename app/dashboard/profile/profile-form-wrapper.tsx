@@ -37,7 +37,6 @@ export default async function ProfileFormWrapper() {
   return (
     <Suspense fallback={<DashboardLoading /> }>
       <ProfileForm profile={profile || { email: user.email }} />
-      <DashboardFooter />
     </Suspense>
   );
 }

@@ -26,7 +26,7 @@ export default async function DashboardContent() {
   return (
       <> 
       <DashboardHome profile={profile} />;
-      <DashboardFooter /> 
+    
        </>
   ) ;
 
