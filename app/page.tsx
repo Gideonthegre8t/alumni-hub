@@ -27,8 +27,8 @@ function HomeContent() {
       {/* ------------------------------- NAVBAR ------------------------------- */}
       <header className="sticky top-0 z-30 backdrop-blur-xl bg-white/70 border-b border-white/50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="font-black text-lg tracking-tight">
-            Masters<span className="text-indigo-600">Alumni</span>
+          <span className="font-black text-lg tracking-tight text-indigo-600">
+           UNILAG M.P.A
           </span>
 
           <Link
@@ -55,9 +55,9 @@ function HomeContent() {
           </span>
 
           <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-6">
-            Where Alumni
+             UNILAG M.P.A 
             <span className="block bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Stay Connected
+              CLASS OF 2024/2025
             </span>
           </h1>
 

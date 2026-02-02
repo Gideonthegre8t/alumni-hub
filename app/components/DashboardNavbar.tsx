@@ -22,7 +22,7 @@ export default function DashboardNavbar() {
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
      <Link href="/dashboard" className="font-black text-lg bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient-x"
 >
-          Alumni Hub
+         UNILAG M.P.A
         </Link>
 
         {/* Desktop */}

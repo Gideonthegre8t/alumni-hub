@@ -10,7 +10,7 @@ export default function DashboardFooter() {
       <div className="max-w-5xl mx-auto px-6 py-6 lg:py-12 md:flex md:justify-between md:items-start space-y-8 md:space-y-0">
         {/* Branding */}
         <div className="space-y-3">
-          <h2 className="text-2xl font-bold text-gray-800">Alumni Hub</h2>
+          <h2 className="text-2xl font-bold text-gray-800">UNILAG M.P.A CLASS OF 2024/2025</h2>
           <p className="text-sm text-gray-500 max-w-xs">
             Stay connected, explore opportunities, and celebrate memories with your alumni community.
           </p>
@@ -65,7 +65,7 @@ export default function DashboardFooter() {
       {/* Bottom */}
       <div className="border-t bg-gray-50">
         <div className="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
-         <p> Alumni Hub. All rights reserved.</p>
+         <p>  UNILAG M.P.A CLASS OF 2024/2025. All rights reserved.</p>
           <div className="flex space-x-4 mt-2 sm:mt-0">
             <Link href="/dashboard" className="hover:text-gray-900 transition">Dashboard</Link>
             {/* <Link href="/privacy" className="hover:text-gray-900 cursor-not-allowed transition">Privacy</Link>
