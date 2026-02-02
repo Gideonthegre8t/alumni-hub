@@ -9,7 +9,7 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Alumni Meet",
+  title: "UNILAG M.P.A CLASS OF 2024/2025",
   description: "The fastest way to meet a co-member ",
 };
 
