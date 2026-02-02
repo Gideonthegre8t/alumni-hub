@@ -3,7 +3,6 @@ import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import DashboardFooter from "../dashboard-footer";
 import { Mail, Phone } from "lucide-react";
 
 
@@ -200,7 +199,6 @@ export default function AlumniDirectoryPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50">
       <Suspense fallback={<AlumniSkeleton />}>
         <AlumniContent />
-        <DashboardFooter />
       </Suspense>
     </div>
   );

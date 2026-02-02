@@ -2,7 +2,6 @@ import ProfileForm from "../profile-form";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { Suspense } from "react";
-import DashboardFooter from "../dashboard-footer";
 import DashboardLoading from "../loading";
 
 export default async function ProfileFormWrapper() {
